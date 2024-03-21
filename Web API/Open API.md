@@ -361,7 +361,7 @@ properties:
     format: email
     description: Email address
     minLength: 1
-    maxLength: 2
+    maxLength: 20
     default: example@example.com
   numberProperty:
     type: number
@@ -391,24 +391,23 @@ additionalProperties: false
 ###### Примеры со string объектами
 ```yaml
 stringObjects:
-#schema тут можно не писать, т.к. при ссылке на именованный объект схема там и так будет
-  schema:
-    type: object
-    properties:
-      birthDate:
-        description: Дата рождения
-        type: string
-        pattern: "YYYY-MM-DD"
-        example: "1996-02-27"
-      currency:
-        type: string
-        enum: [RUB, USD]
-        example: RUB
-      email:
-        description: Email address
-        type: string
-        format: email
-        default: example@example.com
-        minLength: 1
-        maxLength: 35
+# тут схемы (ключевого слова schema) не должно быть, это и так описание схемы
+  type: object
+  properties:
+    birthDate:
+      description: Дата рождения
+      type: string
+      pattern: "YYYY-MM-DD"
+      example: "1996-02-27"
+    currency:
+      type: string
+      enum: [RUB, USD]
+      example: RUB
+    email:
+      description: Email address
+      type: string
+      format: email
+      default: example@example.com
+      minLength: 1
+      maxLength: 35
 ```
