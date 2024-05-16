@@ -47,10 +47,10 @@
                 schema:
                   birthdayData:
                     type: object
-                      properties:
-                        birthday:
-                          type: string
-                          format: date
+                    properties:
+                      birthday:
+                        type: string
+                        format: date
     ```
 - 2
 
@@ -233,7 +233,7 @@ paths:
   - `parameters` <font style="color:violet">(объект)</font> -  Параметры, принимаемые путем. Не включает параметры тела запроса (`requestBody`). Может ссылаться на объект из `components`.
     - `name` - имя параметра
     - `in` - место параметра. Возможные значения:
-      -  `query` - параметр будет передан в строке запроса URL (<font style="color:#00CED1;">?param=value</font>)
+      - `query` - параметр будет передан в строке запроса URL (<font style="color:#00CED1;">?param=value</font>)
       - `path` - параметр будет передан как часть URL-пути (<font style="color:#00CED1;">/resource/{param}</font>)
       - `header` - параметр будет передан в заголовке запроса (<font style="color:#00CED1;">HeaderName: value</font>)
       - `cookie` - параметр будет передан как куки в запросе (<font style="color:#00CED1;">Cookie: param=value</font>)
@@ -319,16 +319,17 @@ components:
       - `properties` - содержит описание свойств(полей) объекта
     - `null`
   - Расширенные типы данных:
-    -  `date`
+    - `date`
     - `date-time`
     - `password`
-    -  `byte`
+    - `byte`
     - `binary`
     -  и пр.
 - `title` и `description` - описание схемы
 - `format` - определяет формат данных. На основе данного св-ва генераторы кода могут подбирать соответствующие типы данных.
   - `date` - формат для даты (например, "2019-12-31")
   - `date-time` - формат для даты и времени (например, "2019-12-31T23:59:59Z")
+  - `int64` - если указать у `type = integer` - то тип данных будет `Long`
   - `password` - формат для пароля (например, "")
   - `byte` - формат для данных в виде последовательности байтов (например, base64-encoded image)
   - `binary` - формат для бинарных данных (например, файлы)
@@ -348,6 +349,9 @@ components:
 - `additionalProperties` - определяет, могут ли содержаться дополнительные свойства, которые не описаны в схеме
 - `enum` - список допустимых значений <font style="color:violet">для строк</font>
 - `pattern` - регулярное выражение, которому должно соответствовать значение (<font style="color:violet">для строк</font>)
+- `x-field-extra-annotation` - добавит к полю указанную аннотацию.
+  `x-field-extra-annotation = "@NotNull"`
+  `x-field-extra-annotation = "@jakarta.persistence.Enumerated(jakarta.persistence.EnumType.STRING)"` - валидация строк, преобразуемых в enum.
 
 ##### Примеры
 ###### Общий пример
