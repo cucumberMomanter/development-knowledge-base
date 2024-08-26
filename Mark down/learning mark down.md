@@ -2,6 +2,8 @@
 ## Заголовок h2
 [Курс по obsidian](https://www.youtube.com/playlist?list=PLeDR6lYFEHWEUxwSA8OplPLvk50DCVraH)
 
+[Obsidian download](https://obsidian.md/)
+
 [ссылка](https://jut.su/jujutsu-kaisen/season-2/episode-22.html)
 
 ![ссылка на изображение| 200](https://avatars.mds.yandex.net/i?id=8fb87dffd99cc9392afd9a4c2641acc5704d2a53-8972446-images-thumbs&n=13)
