@@ -13,7 +13,7 @@ e1.equals(e2) == true
 ```
 Но это в идеале, а не обязательно.
 
-> **Натуральная** (естественная) сортировка - это сортировка строк в алфавитном порядке или же сортировка чисел по возрастанию.
+> **Натуральная** (естественная) сортировка - это, например, сортировка строк в алфавитном порядке или же сортировка чисел по возрастанию.
 
 ### Урок 1 Comparable
 > Интерфейс `Comparable` используется для сравнения объектов, используя естественный порядок.
@@ -203,7 +203,7 @@ ArrayList<DataType> list3 = new ArrayList<>(list);
    - созданный `List` жестко связан с массивом, на основе которого создается,
      и `->` имеет тот же размер.
 2. `removeAll(Collection <?> c) -> boolean`
-3. `retainAll(Collection <?> c -> boolean`
+3. `retainAll(Collection <?> c) -> boolean`
    - антоним метода `removeAll` -> в `ArrayList` останутся только те эл-ты, которые содержатся в переданной коллекции.
 4. `containsAll(Collection <?> c) -> boolean`
    - проверяет, содержит ли `ArrayList`, все эл-ты из `ArrayList`, переданного в параметр
@@ -215,7 +215,7 @@ ArrayList<DataType> list3 = new ArrayList<>(list);
 2. `toArray(T[] a) - > T[]`
    - В параметр можно передавать массив нулевой длины, java автоматические увеличит его до необходимого размера: `list.toArray(new String[0])`
 3. `List.of(E ... elements) -> List<E>`
-   - return **unmodifiable* list
+   - return **unmodifiable** list
    -  не может содержать `null`
 1. `List.copyOf(Collection<E> c) -> List<E>`
    - return **unmodifiable** list
@@ -543,7 +543,7 @@ Set<Map.Entry<Integer, String>> entries = map.entrySet();
 
 **Коллизия** - когда разные объекты возвращают одинаковый `hashcode`.
 Коллизии возможны, т.к.  `hashcode` возвращает **int**, а он имеет ограниченный размер.
-В теории разных объектов чего-либо (например, людей на планете) может быть больше, чем вмещает в себя **int**.
+В теории, разных объектов чего-либо (например, людей на планете) может быть больше, чем вмещает в себя **int**.
 
 **Простое число** - это число которое делится только на себя и на 1.
 
@@ -772,7 +772,7 @@ treeMap.tailMap(9);   //[9, last]
 treeMap.headMap(8.2); // [first, 8.2)
 
 treeMap.lastEntry();
-treeMap.firstEntry
+treeMap.firstEntry();
 
 treeMap.containsKey(8.2);   // сравнение через compareTo
 treeMap.containsValue(st1); // сравнение через equals
@@ -884,7 +884,7 @@ System.out.println(lhm);
 
 ###  Урок 19 HashTable
 > **HashTable** устаревший класс, который работает по тем же принципам, что и `HashMap`. В его основе так же лежит массив.
-> В отличии от `HashMap` является **synchronized**. По этой причине его методы далеко не такие быстрые.
+> В отличии от `HashMap` - является **synchronized**. По этой причине его методы далеко не такие быстрые.
 
 - В **HashTable** ни `key` ни `value` <font style="color:red">НЕ</font> могут быть **null**;
 - Даже если нужна поддержка многопоточности, `HashTable` лучше не использовать. Следует использовать **ConcurrentHashMap**.
@@ -1138,7 +1138,7 @@ queue.peek();
 
 // можно удалять элементы не только из начала очереди,
 // но если так часто делать - теряется смысл использования Queue
-queue.remove("Igor);
+queue.remove("Igor");
 ```
 
 ##### Методы добавления эл-тов
