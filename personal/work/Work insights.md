@@ -49,9 +49,6 @@ logging.level.root=DEBUG
 ### Kafka
 - чтобы вычитать все сообщения из топика с самого начала, можно просто изменить id consumer
 
-### Transactional
-- `@Transactional` лучше использовать на `Service` уровне, а не на уровне `Repository`. Чтобы после получения данных из DB, при выполнении бизнес логики, транзакция оставалась открытой и изменения данных попадали сразу в DB.
-
 ### PostgreSQL
 - При подключении DB в IDEA важно указывать не только: `host`, `port`, `username`, `password`. Но еще и `database`:
   ![[Pasted image 20240520191537.png]]

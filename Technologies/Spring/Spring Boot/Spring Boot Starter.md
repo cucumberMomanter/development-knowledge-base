@@ -67,7 +67,7 @@ public class EnvPostProcessor implements EnvironmentPostProcessor {
 > После регистрации свойства доступны будут во всем приложении.
 > `@PropertySource` вешается на конфигурационный класс или любой бин (класс помеченный `@Component`).
 
-<font style="color:red">ВАЖНО</font>: на конфигурационном классе c `@PropertySource` не должно быть условий создания с фича флагами из регистрируемого файла (из остальных можно), иначе аннотация @PropertySource не сработает и конфиг класс тоже.
+<font style="color:red">ВАЖНО</font>: на конфигурационном классе c `@PropertySource` не должно быть условий создания с фича флагами из регистрируемого файла (из остальных можно), иначе аннотация `@PropertySource` не сработает и конфиг класс тоже.
 Пример такого кейса:
 ```java
 @Configuration
@@ -83,12 +83,12 @@ public class MyAppConfig {
 > `@EnableConfigurationProperties(MyAppProperties.class)` - добавляет бин `property-класса` в Spring container.
 > Вешается на конфигурационный класс или любой бин (класс помеченный `@Component`).
 
-<font style="color:red">ПРИМЕЧАНИЕ</font>: Если на классе висит **фича флаг** на его создание (напр., `@ConditionalOnProperty()`) из уже добавленного файла со свойствами **со значением `false`**, аннотации `@PropertySource` и `@EnableConfigurationProperties` не сработают.
+<font style="color:red">ПРИМЕЧАНИЕ</font>: Если на классе висит **фича флаг** на его создание (напр., `@ConditionalOnProperty()`), из уже добавленного файла со свойствами, **со значением `false`**, аннотации `@PropertySource` и `@EnableConfigurationProperties` не сработают.
 
 ###### @PropertySource и YAML
 > **По умолчанию** **`@PropertySource`** **не загружает файлы YAML**
 > 
-> Начиная с Spring 4.3, `@PropertySource` поставляется с атрибутом `factory .` Мы можем использовать его, чтобы **предоставить собственную реализацию** **`PropertySourceFactory`** **, которая будет обрабатывать файлы YAML**
+> Начиная с Spring 4.3, `@PropertySource` поставляется с атрибутом `factory`. Мы можем использовать его, чтобы **предоставить собственную реализацию** **`PropertySourceFactory`** **, которая будет обрабатывать файлы YAML**
 
 ```java
 @Configuration

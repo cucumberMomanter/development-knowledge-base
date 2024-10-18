@@ -72,7 +72,7 @@ other objects:
 2 * 8 (Object header)
 + 4 (length-field)
 + 4 (dead space due to alignment restrictions)
-+ 8(размер ссылки на объект) * length
++ 8 (размер ссылки на объект) * length
 ```
 3) Подсчет размера хранимого в массиве объекта:
 ```
